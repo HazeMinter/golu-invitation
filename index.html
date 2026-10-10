@@ -62,19 +62,20 @@
 
     .glow-orb {
       position: absolute;
-	top: 15%;
-	left: center;
+      top: 15%;
+      left: 50%;
+      transform: translateX(-50%);
       border-radius: 60%;
       filter: blur(120px);
       opacity: 0.7;
       animation: float 8s ease-in-out infinite alternate;
       z-index: 1;
-      color: #000000
+      color: #000000;
     }
 
     @keyframes float {
-      0% { transform: translate(0, 0) scale(1); }
-      100% { transform: translate(30px, -40px) scale(1.1); }
+      0% { transform: translate(-50%, 0) scale(1); }
+      100% { transform: translate(calc(-50% + 30px), -40px) scale(1.1); }
     }
 
     .section-title {
@@ -136,15 +137,16 @@
     #home {
       background-image: url('IMG_20251204_190040079~2.jpg');
       background-size: 115%;
-
       background-repeat: no-repeat;
       background-attachment: fixed;
     }
+    
     #home .content-box {
       position: absolute;
-      top: 25%;   /* Adjust this value */
-      left: center%;  /* Adjust this value */
-      text-align: left; /* Options: left, center, right */
+      top: 25%;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
     }
 
     #directions {
@@ -257,6 +259,12 @@
         height: auto;
         min-height: 100vh;
         padding: 4rem 1.25rem;
+      }
+
+      #home {
+        background-size: cover;
+        background-attachment: scroll;
+        background-position: center;
       }
 
       .card-grid {
