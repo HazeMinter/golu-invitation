@@ -129,6 +129,7 @@
       font-size: 0.95rem;
       color: #ffd700;
       line-height: 1.5;
+	overflow-wrap: anywhere;
     }
 
     /* ==========================================
@@ -250,28 +251,78 @@
     /* ==========================================
         5. MOBILE RESPONSIVE SCALING & ADAPTATION
         ========================================== */
-    @media (max-width: 820px) {
-      html {
-        scroll-snap-type: none;
-      }
-      
-      .section-page {
-        height: auto;
-        min-height: 100vh;
-        padding: 4rem 1.25rem;
-      }
+@media (max-width: 820px) {
+  html {
+    scroll-snap-type: none;
+  }
 
-      #home {
-        background-size: cover;
-        background-attachment: scroll;
-        background-position: center;
-      }
+  body {
+    overflow-x: clip;
+  }
 
-      .card-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-      }
-    }
+  .section-page {
+    height: auto;
+    min-height: 100vh;
+    padding: 4rem 1.25rem;
+  }
+
+  #home {
+    background-size: cover;
+    background-attachment: scroll;
+    background-position: center;
+  }
+
+  /* Prevent hero text from overlapping the details card */
+  #home .content-box {
+    position: static;
+    top: auto;
+    left: auto;
+    transform: none;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  #home .section-page {
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 0;
+  }
+
+  .glass-card {
+    padding: 1.15rem;
+  }
+
+  .badge {
+    font-size: 0.85rem;
+    overflow-wrap: anywhere;
+  }
+
+  .content-box {
+    max-width: 100%;
+  }
+
+  .map-frame {
+    height: 200px;
+  }
+
+  .qr-container {
+    max-width: 100%;
+  }
+
+  #qrcode {
+    max-width: 100%;
+  }
+}
   </style>
 </head>
 <body>
